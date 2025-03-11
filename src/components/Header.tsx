@@ -7,7 +7,6 @@ import { logout } from "../axiosApis/Apis";
 const Header: React.FC = () => {
     const user=getUserName();
   const handleLogout = async() => {
-    // await logout()
     localStorage.removeItem('access_token');
     window.location.reload();
   };
@@ -15,8 +14,8 @@ const Header: React.FC = () => {
     <AppBar 
       position="fixed"
       sx={{ 
-        background: "linear-gradient(to right,rgb(128, 139, 151), #00c6ff)",  // Adjust colors as per login page theme
-        zIndex: 1100  // Ensures it's above other elements
+        background: "linear-gradient(to right,rgb(128, 139, 151), #00c6ff)",  
+        zIndex: 1100  
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
