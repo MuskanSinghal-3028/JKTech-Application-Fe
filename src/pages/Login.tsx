@@ -36,55 +36,18 @@ const Login: React.FC = () => {
   
   const onGoogleSignIn = async () => {
     try {
-    //   const response = await authenticateGoogle();
     window.location.assign(`${process.env.REACT_APP_API_URL}/auth/google`);
-
-    //   const token = response.data.token;
-    //    localStorage.setItem('access_token', token);
-      // Handle successful login (e.g., redirect to another page)
     } catch (error) {
       console.error('Google Sign-In failed', error);
-      // Handle error (e.g., show error message)
     }
   };
+useEffect(()=>{
+  onGoogleSignIn()
+},[])
 
   return (
     <Background>
-      <FormContainer elevation={3}>
-        <Typography component="h1" variant="h5" gutterBottom>
-          Login
-        </Typography>
-        <form noValidate>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-          <StyledButton type="submit" fullWidth variant="contained" color="primary">
-            Sign In
-          </StyledButton>
-          <StyledButton fullWidth variant="contained" color="secondary" startIcon={<GoogleIcon />} onClick={onGoogleSignIn}>
-            Sign In with Google
-          </StyledButton>
-        </form>
-      </FormContainer>
+
     </Background>
   );
 };
