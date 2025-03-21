@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@types/cypress": "^0.1.6",
+    "@types/dompurify": "^3.0.5",
     "cypress": "^14.1.0"
   }
 }
